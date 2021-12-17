@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import {Container,Row,Button} from 'react-bootstrap'
+import BoardGame from './components/BoardGame'
+import board from './Models/board';
+import { useState } from 'react';
 
 function App() {
+  
+  const [gameBoard,setBoard] = useState(board.board)
+    
+  const swap = (i,j) => {
+  
+      const newBoard = board.swap(i,j)
+      
+      setBoard(newBoard)
+    
+  }
+  const shuffle = () => {
+    const newBoard = board.shuffle()
+    setBoard(newBoard)
+  }
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Container style={style}>
+        
+        <Row>
+          <BoardGame gameBoard={gameBoard} swap={swap}/>
+        </Row>
+        <Row style={{padding:"5vh"}}>
+          <Button onClick={shuffle}>Shuffle</Button>
+        </Row>
+      </Container>
     </div>
   );
+}
+
+const style = {
+  display:"flex",
+  flexDirection:"column",
+  alignItems:"center",
+  justifyContent:'center',
+  height:"100vh"
 }
 
 export default App;
