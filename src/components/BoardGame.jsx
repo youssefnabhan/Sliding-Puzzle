@@ -31,13 +31,18 @@ const BoardGame = ({gameBoard,swap}) => {
                 
                 {blockNumbers.map((number,index)=> <Block key={number} swap={swap} i={Math.ceil((index+1)/4)-1} j={ (index+1)%4 ? (index+1)%4 -1 : 3 } num={number}/>
 
-
+                
                 )}   
             </div>
+
+//{blockNumbers.map((number,index)=> <Block />)}
+
+                
+)}
             
-        )
+        
     }
-}
+
 
 const style = {
     display:"inline",

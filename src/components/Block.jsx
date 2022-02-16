@@ -17,7 +17,7 @@ const Block = ({num,swap,i,j}) => {
             padding:"0",
             border:"solid black 2px",
             backgroundImage:"url('./image.jpg')",
-            color:"white",
+            color:"black",
             backgroundSize:"400px 400px",
             backgroundPosition:`${dim1}px ${dim2}px`
         }
@@ -54,7 +54,7 @@ const Block = ({num,swap,i,j}) => {
             padding:"0",
             border:"solid black 2px",
             backgroundImage:"url('./image.jpg')",
-            color:"white",
+            color:"black",
             backgroundSize:"400px 400px",
             backgroundPosition:`${dim1}px ${dim2}px`
         })
